@@ -49,7 +49,12 @@ export default {
     theme: '换肤',
     clipboardDemo: 'Clipboard',
     i18n: '国际化',
-    star: '星星'
+    star: '星星',
+    callOut: 'AI外呼',
+    callDetail: '通话记录',
+    callMore: '外呼更进',
+    talkConfig: '话术配置',
+    repository: '知识库'
   },
   navbar: {
     logOut: '退出登录',

@@ -49,7 +49,12 @@ export default {
     theme: 'Theme',
     clipboardDemo: 'Clipboard',
     i18n: 'I18n',
-    star: 'Star'
+    star: 'Star',
+    callOut: 'callOut',
+    callDetail: 'callDetail',
+    callMore: 'callMore',
+    talkConfig: 'talkConfig',
+    repository: 'repository'
   },
   navbar: {
     logOut: 'Log Out',
