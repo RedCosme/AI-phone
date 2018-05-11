@@ -2,7 +2,7 @@
  * @Author: kaker.xutianxing 
  * @Date: 2018-05-09 15:26:21 
  * @Last Modified by: kaker.xutianxing
- * @Last Modified time: 2018-05-09 15:52:22
+ * @Last Modified time: 2018-05-10 18:43:08
  */
 <template>
     <div class="list_state">
@@ -88,7 +88,7 @@ export default {
   border-radius: 5px;
   border: 1px solid;
   display: inline-block;
-  height: 30px;
-  line-height: 20px;
+  height: 25px;
+  line-height: 15px;
 }
 </style>

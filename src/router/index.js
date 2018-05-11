@@ -40,7 +40,7 @@ export const constantRouterMap = [
       path: 'dashboard',
       component: _import('dashboard/index'),
       name: 'dashboard',
-      meta: { title: 'dashboard', icon: 'dashboard', noCache: true }
+      meta: { title: '主页', icon: 'dashboard', noCache: true }
     }]
   },
   // {
@@ -55,19 +55,12 @@ export const constantRouterMap = [
   //   }]
   // },
 
-  // {
-  //   path: '/star',
-  //   component: Layout,
-  //   redirect: '/star/index',
-  //   children: [
-  //     { path: 'index', component: _import('star/index'), name: 'star', meta: { title: 'star' }}
-  //   ]
-  // },
   {
     path: '/taskManger',
     component: Layout,
     redirect: '/taskManger/index',
     meta: { title: '任务管理', icon: 'theme' },
+    name: '任务管理',
     children: [
       { path: 'index', component: _import('task-manager/callOut'), name: 'callOut', meta: { title: 'AI外呼' }},
       { path: 'detail', component: _import('task-manager/callDetail'), name: 'callDetail', meta: { title: '通话记录' }},
@@ -77,11 +70,13 @@ export const constantRouterMap = [
   {
     path: '/AiConfig',
     component: Layout,
-    redirect: '/AiConfig/index',
+    redirect: 'noredirect',
     meta: { title: 'AI配置', icon: 'dashboard' },
+    name: 'AI配置',
     children: [
       { path: 'index', component: _import('ai-config/talkConfig'), name: 'talkConfig', meta: { title: '话术配置' }},
-      { path: 'detail', component: _import('ai-config/repository'), name: 'repository', meta: { title: '知识库' }}
+      { path: 'detail', component: _import('ai-config/repository'), name: 'repository', meta: { title: '知识库' }},
+      { path: 'setting', component: _import('ai-config/talkSetting'), name: 'talkSetting', meta: { title: '话术设置' }, hidden: false }
     ]
   }
 ]
