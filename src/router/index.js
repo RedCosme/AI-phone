@@ -78,6 +78,19 @@ export const constantRouterMap = [
       { path: 'detail', component: _import('ai-config/repository'), name: 'repository', meta: { title: '知识库' }},
       { path: 'setting', component: _import('ai-config/talkSetting'), name: 'talkSetting', meta: { title: '话术设置' }, hidden: false }
     ]
+  },
+  {
+    path: '/clientManager',
+    component: Layout,
+    redirect: '/clientManager/index',
+    meta: { title: 'CRM', icon: 'peoples' },
+    name: 'CRM',
+    children: [{
+      path: 'index',
+      component: _import('client-manager/index'),
+      name: 'clientManager',
+      meta: { title: '客户管理', icon: 'peoples' }
+    }]
   }
 ]
 

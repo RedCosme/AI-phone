@@ -2,8 +2,8 @@
   <div class="login-container">
     <el-form class="login-form" autoComplete="on" :model="loginForm" :rules="loginRules" ref="loginForm" label-position="left">
       <div class="title-container">
-        <h3 class="title">{{$t('login.title')}}</h3>
-        <lang-select class="set-language"></lang-select>
+        <h3 class="title">系统登录</h3>
+        <!-- <lang-select class="set-language"></lang-select> -->
       </div>
       <el-form-item prop="username">
         <span class="svg-container svg-container_login">
@@ -22,22 +22,22 @@
         </span>
       </el-form-item>
 
-      <el-button type="primary" style="width:100%;margin-bottom:30px;" :loading="loading" @click.native.prevent="handleLogin">{{$t('login.logIn')}}</el-button>
+      <el-button type="primary" style="width:100%;margin-bottom:30px;" :loading="loading" @click.native.prevent="handleLogin">登陆</el-button>
 
       <div class="tips">
-        <span>{{$t('login.username')}} : admin</span>
-        <span>{{$t('login.password')}} : {{$t('login.any')}}</span>
+        <span>账户 : admin</span>
+        <span>密码 : 随便填</span>
       </div>
       <div class="tips">
-        <span style="margin-right:18px;">{{$t('login.username')}} : editor</span>
-        <span>{{$t('login.password')}} : {{$t('login.any')}}</span>
+        <span style="margin-right:18px;">账户 : editor</span>
+        <span>密码 : 随便填</span>
       </div>
 
-      <el-button class="thirdparty-button" type="primary" @click="showDialog=true">{{$t('login.thirdparty')}}</el-button>
+      <!-- <el-button class="thirdparty-button" type="primary" @click="showDialog=true">第三方登录</el-button> -->
     </el-form>
 
-    <el-dialog :title="$t('login.thirdparty')" :visible.sync="showDialog" append-to-body>
-      {{$t('login.thirdpartyTips')}}
+    <el-dialog title="第三方登录" :visible.sync="showDialog" append-to-body>
+      本地不能模拟，请结合自己业务进行模拟！！！
       <br/>
       <br/>
       <br/>
