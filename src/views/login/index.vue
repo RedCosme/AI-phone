@@ -51,7 +51,7 @@
 import { isvalidUsername } from '@/utils/validate'
 import LangSelect from '@/components/LangSelect'
 import SocialSign from './socialsignin'
-
+import $ from 'jquery'
 export default {
   components: { LangSelect, SocialSign },
   name: 'login',
@@ -128,6 +128,7 @@ export default {
     }
   },
   created() {
+    console.log($)
     // window.addEventListener('hashchange', this.afterQRScan)
   },
   destroyed() {

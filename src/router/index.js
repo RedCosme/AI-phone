@@ -91,6 +91,19 @@ export const constantRouterMap = [
       name: 'clientManager',
       meta: { title: '客户管理', icon: 'peoples' }
     }]
+  },
+  {
+    path: '/manage',
+    component: Layout,
+    redirect: '/manage/count',
+    meta: { title: '管理', icon: 'chart' },
+    name: '管理',
+    children: [{
+      path: 'count',
+      component: _import('manage/count'),
+      name: 'manage',
+      meta: { title: '统计分析', icon: 'chart' }
+    }]
   }
 ]
 
