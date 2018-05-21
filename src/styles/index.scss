@@ -202,3 +202,39 @@ code {
 .multiselect--active {
   z-index: 1000 !important;
 }
+.add-li{
+  position:absolute;
+  max-width:240px;
+  min-width:140px;
+  background-color:#fff;
+  padding:10px;
+  color: #666;
+  span{
+    font-size: 14px;
+  }
+  i{
+    display: none;
+  }
+  p{
+    font-size: 13px;
+    margin: 10px 0;
+  }
+  button{
+    border: none;
+    outline: none;
+    font-size: 12px;
+    color:#409EFF;
+    padding: 8px;
+    background-color: #f0f6fe;
+  }
+  &.jump{
+    width: 140px;
+  }
+  
+}
+.talk-setting {
+  #content{
+    canvas{
+    }
+  }
+}
