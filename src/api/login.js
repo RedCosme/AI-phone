@@ -1,5 +1,5 @@
 import request from '@/utils/request'
-
+import $ from 'jquery'
 export function loginByUsername(username, password) {
   const data = {
     username,
@@ -12,6 +12,13 @@ export function loginByUsername(username, password) {
   })
 }
 
+export function login(data) {
+  return request({
+    url: '/user/login',
+    method: 'post',
+    data: $.param(data)
+  })
+}
 export function logout() {
   return request({
     url: '/login/logout',

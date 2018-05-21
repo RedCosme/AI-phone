@@ -209,6 +209,7 @@ code {
   background-color:#fff;
   padding:10px;
   color: #666;
+  cursor: move;
   span{
     font-size: 14px;
   }
@@ -235,6 +236,8 @@ code {
 .talk-setting {
   #content{
     canvas{
+      pointer-events: none;
+      z-index: 4;
     }
   }
 }

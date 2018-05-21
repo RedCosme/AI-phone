@@ -21,9 +21,9 @@
           <svg-icon icon-class="eye" />
         </span>
       </el-form-item>
+      <el-checkbox v-model="loginForm.rememberMe" style="margin-bottom:20px;">记住我</el-checkbox>
 
       <el-button type="primary" style="width:100%;margin-bottom:30px;" :loading="loading" @click.native.prevent="handleLogin">登陆</el-button>
-
       <div class="tips">
         <span>账户 : admin</span>
         <span>密码 : 随便填</span>
@@ -51,6 +51,7 @@
 import { isvalidUsername } from '@/utils/validate'
 import LangSelect from '@/components/LangSelect'
 import SocialSign from './socialsignin'
+import { login } from '@/api/login'
 export default {
   components: { LangSelect, SocialSign },
   name: 'login',
@@ -72,7 +73,8 @@ export default {
     return {
       loginForm: {
         username: 'admin',
-        password: '1111111'
+        password: '123456',
+        rememberMe: false
       },
       loginRules: {
         username: [{ required: true, trigger: 'blur', validator: validateUsername }],
@@ -95,11 +97,22 @@ export default {
       this.$refs.loginForm.validate(valid => {
         if (valid) {
           this.loading = true
-          this.$store.dispatch('LoginByUsername', this.loginForm).then(() => {
-            this.loading = false
-            this.$router.push({ path: '/' })
-          }).catch(() => {
-            this.loading = false
+          login(this.loginForm).then(response => {
+            console.log(response)
+            if (response.data.resultCode === 1) {
+              console.log('登陆成功')
+              this.$store.dispatch('LoginByUsername', this.loginForm).then(() => {
+                this.loading = false
+                this.$router.push({ path: '/' })
+              }).catch(() => {
+                this.loading = false
+              })
+            } else {
+              this.loading = false
+              this.$message.error('用户名或密码输入错误')
+            }
+          }).catch(res => {
+            console.log(res, '失敗')
           })
         } else {
           console.log('error submit!!')

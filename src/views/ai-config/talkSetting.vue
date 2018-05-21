@@ -759,8 +759,6 @@ export default {
   }
   canvas {
     position: absolute;
-    z-index: 4;
-    pointer-events: none;
   }
   .add-li{
     max-width: 240px;
